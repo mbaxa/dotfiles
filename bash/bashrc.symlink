@@ -1,0 +1,2 @@
+alias ll='ls -al'
+alias psg='ps -ef | grep'
