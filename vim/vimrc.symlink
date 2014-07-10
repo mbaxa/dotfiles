@@ -1,4 +1,43 @@
+execute pathogen#infect()
 syntax on
+filetype plugin indent on
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" http://dougblack.io/words/a-good-vimrc.html
+set expandtab     " tabs are spaces
+set tabstop=2     " number of visual spaces per TAB
+set softtabstop=2 " number of spaces in tab when editing
+set shiftwidth=2  " used by >> << 
+
+filetype indent on  " load filetype-specific indent files
+
+set showmatch     " When a bracket is inserted, briefly jump to matching one
+set incsearch     " search as characters are entered
+set ignorecase    " Ignore case in search patterns
+set smartcase     " Override ignorecase if patterns contains upper case chars
+                  " used for / ? n N :g :s
+                  " NOT used for * # gd
+
+set hlsearch      " highlight matches
+
+syntax enable     " enable syntax processing
+colorscheme github 
+  " https://github.com/flazz/vim-colorschemes/blob/master/colors/github.vim
+
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " filename
+set statusline+=%h%m%r%w                     " status flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+"set statusline+=\ %{fugitive#statusline()}     " fugitive
+set statusline+=%=                           " right align remainder
+set statusline+=0x%-8B                       " character value
+set statusline+=%-14(%l,%c%V%)               " line, character
+set statusline+=%<%P                         " file position
+
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
