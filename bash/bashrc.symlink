@@ -3,3 +3,4 @@ alias psg='ps -ef | grep'
 
 PS1="[\u@\h \W]\\$ "
 PATH=$PATH:/usr/local/bin:~/bin
+CLICOLOR=1
