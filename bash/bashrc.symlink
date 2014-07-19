@@ -1,6 +1,15 @@
+function parse_git_dirty {
+  git diff --no-ext-diff --quiet --exit-code &> /dev/null || echo "*"
+}
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/" 
+}
+
 alias ll='ls -al'
 alias psg='ps -ef | grep'
 
 PS1="[\u@\h \W]\\$ "
 PATH=$PATH:/usr/local/bin:~/bin
 CLICOLOR=1
+PS1='[\[\033[01;32m\]\u@\h:\[\033[01;36m\]\w\[\033[00m\]]\n$(parse_git_branch)\$ '
