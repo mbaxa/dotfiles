@@ -1,0 +1,17 @@
+alias macbookpro 1440x900
+alias work-asus 1920x1200
+
+alias hyper ctrl;alt;cmd
+
+default layout1 count:1
+default layout2 resolutions:work-asus;macbookpro
+
+alias lefthalf  move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias full      move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+bind left:${hyper}  ${lefthalf}
+bind right:${hyper} ${righthalf}
+bind up:${hyper}    ${full}
+
+bind down:${hyper} throw next
