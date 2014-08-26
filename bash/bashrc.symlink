@@ -3,7 +3,7 @@ function parse_git_dirty {
 }
 
 function parse_git_remote_origin {
-  git config --get remote.origin.url | sed -Ee "s/^(https:\/\/|git@)([^:\/@]+)[\/:].*\.git$/\2/"
+  git config --get remote.origin.url | sed -Ee "s/^(https:\/\/|git@)([^:\/@]+)[\/:].*(\.git)?$/\2/"
 }
 
 function parse_git_branch {
@@ -12,6 +12,7 @@ function parse_git_branch {
 
 alias ll='ls -al'
 alias psg='ps -ef | grep'
+alias v='vagrant'
 
 PS1="[\u@\h \W]\\$ "
 PATH=$PATH:/usr/local/bin:~/bin
