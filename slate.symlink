@@ -3,9 +3,6 @@ alias work-asus 1920x1200
 
 alias hyper ctrl;alt;cmd
 
-default layout1 count:1
-default layout2 resolutions:work-asus;macbookpro
-
 alias topleft     move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
 alias topright    move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
 alias bottomleft  move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
