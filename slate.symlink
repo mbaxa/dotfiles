@@ -20,3 +20,4 @@ bind .:${hyper}  ${bottomleft}
 bind /:${hyper} ${bottomright}
 
 bind down:${hyper} throw next
+bind g:${hyper} grid padding:1 ${macbookpro}:2,2 ${work-asus}:6,3
