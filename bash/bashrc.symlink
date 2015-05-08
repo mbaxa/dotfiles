@@ -3,7 +3,7 @@ function parse_git_dirty {
 }
 
 function parse_git_remote_origin {
-  git config --get remote.origin.url | sed -Ee "s/^(https:\/\/|git@)([^:\/@]+)[\/:].*(\.git)?$/\2/"
+  git config --get remote.origin.url | sed -Ee "s/^(https:\/\/|git@)?([^:\/@]+)[\/:].*(\.git)?$/\2/"
 }
 
 function parse_git_branch {
@@ -15,6 +15,12 @@ alias psg='ps -ef | grep'
 alias v='vagrant'
 
 PS1="[\u@\h \W]\\$ "
-PATH=$PATH:/usr/local/bin:~/bin
+PATH="$PATH:/usr/local/bin:~/bin:/usr/local/Sublime Text 2"
 CLICOLOR=1
 PS1='\[\033[01;32m\]\u@\h:\[\033[01;36m\]\w\[\033[00m\]\n$(parse_git_branch)\$ '
+
+HISTIGNORE='history'
+HISTTIMEFORMAT='[%F %T] '
+
+PERL_MB_OPT="--install_base \"/home/mbaxa/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/mbaxa/perl5"; export PERL_MM_OPT;
