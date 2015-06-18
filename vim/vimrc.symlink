@@ -23,7 +23,7 @@ set smartcase     " Override ignorecase if patterns contains upper case chars
 set hlsearch      " highlight matches
 
 syntax enable     " enable syntax processing
-colorscheme github 
+"colorscheme github 
   " https://github.com/flazz/vim-colorschemes/blob/master/colors/github.vim
 
 set laststatus=2
