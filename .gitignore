@@ -3,5 +3,7 @@ atom.symlink/.storage
 atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
+atom.symlink/compile-cache/
+atom.symlink/nohup.out
 
 git/gitconfig.symlink
