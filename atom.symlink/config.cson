@@ -2,10 +2,10 @@
   editor:
     showIndentGuide: true
     invisibles: {}
-    fontFamily: "Roboto Mono"
     showInvisibles: true
+    fontFamily: "Roboto Mono"
   core:
-    excludeVcsIgnoredPaths: false
+    excludeVcsIgnoredPaths: true
     ignoredNames: [
       ".bundle"
       ".git"

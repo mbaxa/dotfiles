@@ -1,6 +1,3 @@
-alias macbookpro 1440x900
-alias work-asus 1920x1200
-
 alias hyper ctrl;alt;cmd
 
 alias topleft     move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
@@ -18,6 +15,3 @@ bind ;:${hyper}    ${topleft}
 bind ':${hyper}   ${topright}
 bind .:${hyper}  ${bottomleft}
 bind /:${hyper} ${bottomright}
-
-bind down:${hyper} throw next
-bind g:${hyper} grid padding:1 ${macbookpro}:2,2 ${work-asus}:6,3
