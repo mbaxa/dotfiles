@@ -39,3 +39,4 @@
   "atom-material-ui":
     useRoboto: true
     compactTreeView: true
+  "imdone-atom": {}
