@@ -15,8 +15,8 @@
       "vendor"
     ]
     themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
+      "atom-material-ui"
+      "atom-material-syntax"
     ]
     hideGitIgnoredFiles: true
     disabledPackages: [
@@ -25,6 +25,7 @@
       "metrics"
       "language-todo"
     ]
+    projectHome: "/home/mbaxa/git"
   "spell-check":
     grammars: [
       "text.plain"
@@ -36,3 +37,7 @@
   "release-notes":
     viewedVersion: "0.89.0"
   "tree-view": {}
+  "atom-material-ui":
+    useRoboto: true
+    compactTreeView: true
+  "imdone-atom": {}
