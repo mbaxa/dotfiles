@@ -14,10 +14,6 @@
       "tmp"
       "vendor"
     ]
-    themes: [
-      "atom-material-ui"
-      "atom-material-syntax"
-    ]
     hideGitIgnoredFiles: true
     disabledPackages: [
       "background-tips"
@@ -40,3 +36,4 @@
     useRoboto: true
     compactTreeView: true
   "imdone-atom": {}
+  "file-icons": {}
