@@ -6,13 +6,20 @@ function parse_git_remote_origin {
   git config --get remote.origin.url | sed -Ee "s/^(https:\/\/|git@|ssh:\/\/git@)?([^:\/@]+)[\/:].*(\.git)?$/\2/"
 }
 
+function git_stash_count {
+  git stash list 2> /dev/null | wc -l | sed -e '/^0$/d' -e "s/\(.*\)/[S:\1]/"
+}
+
 function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/($(parse_git_remote_origin):\1$(parse_git_dirty))/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/($(parse_git_remote_origin):\1$(parse_git_dirty))\n$(git_stash_count)/"
 }
 
 alias ll='ls -al'
 alias psg='ps -ef | grep'
 alias v='vagrant'
+alias docker-rm-all='docker rm -v $(docker ps -aq -f status=exited)'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
 
 PS1="[\u@\h \W]\\$ "
 PATH="$PATH:/usr/local/bin:~/bin:/usr/local/Sublime Text 2:/opt/gradle-2.4/bin:/opt/cisco/anyconnect/bin"
@@ -24,3 +31,5 @@ HISTTIMEFORMAT='[%F %T] '
 
 PERL_MB_OPT="--install_base \"/home/mbaxa/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/mbaxa/perl5"; export PERL_MM_OPT;
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
