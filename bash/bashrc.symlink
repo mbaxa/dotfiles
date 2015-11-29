@@ -21,6 +21,8 @@ alias docker-rm-all='docker rm -v $(docker ps -aq -f status=exited)'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 
+[[ $- = *i* ]] && source ~/git/liquidprompt/liquidprompt
+
 PS1="[\u@\h \W]\\$ "
 PATH="$PATH:/usr/local/bin:~/bin:/usr/local/Sublime Text 2:/opt/gradle-2.4/bin:/opt/cisco/anyconnect/bin"
 CLICOLOR=1
