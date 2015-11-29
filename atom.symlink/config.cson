@@ -20,6 +20,7 @@
       "exception-reporting"
       "metrics"
       "language-todo"
+      "imdone-atom"
     ]
     projectHome: "/home/mbaxa/git"
   "spell-check":
