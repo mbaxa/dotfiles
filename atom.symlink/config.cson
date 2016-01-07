@@ -4,6 +4,7 @@
     invisibles: {}
     showInvisibles: true
     fontFamily: "Roboto Mono"
+    fontSize: 15
   core:
     excludeVcsIgnoredPaths: true
     ignoredNames: [
@@ -20,7 +21,6 @@
       "exception-reporting"
       "metrics"
       "language-todo"
-      "imdone-atom"
     ]
     projectHome: "/home/mbaxa/git"
   "spell-check":
