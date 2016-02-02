@@ -10,6 +10,9 @@ unbind C-b
 # use send-prefix to pass C-a through to application
 bind C-a send-prefix
 
+# Set mouse mode
+setw -g mode-mouse on
+
 # shorten command delay
 set -sg escape-time 1
 
@@ -33,3 +36,5 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
+bind s setw synchronize-panes on
+bind S setw synchronize-panes off
