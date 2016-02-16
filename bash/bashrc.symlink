@@ -16,12 +16,12 @@ function parse_git_branch {
 
 function aws_region {
   export AWS_DEFAULT_REGION=$1
-  aws_update_title
+  echo -en "\033]0;AWS:P=${AWS_PROFILE-$AWS_DEFAULT_PROFILE},R=${AWS_REGION-$AWS_DEFAULT_REGION}\a"
 }
 
 function aws_profile {
   export AWS_PROFILE=$1
-  aws_update_title
+  echo -en "\033]0;AWS:P=${AWS_PROFILE-$AWS_DEFAULT_PROFILE},R=${AWS_REGION-$AWS_DEFAULT_REGION}\a"
 }
 
 function aws_update_title {
