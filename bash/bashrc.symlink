@@ -39,7 +39,7 @@ alias drm-all='docker rm -v $(docker ps -aq -f status=exited)'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias drm='docker rm'
-alias drmi'docker rmi'
+alias drmi='docker rmi'
 
 [[ $- = *i* ]] && source ~/git/liquidprompt/liquidprompt
 
