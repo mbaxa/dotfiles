@@ -1,12 +1,16 @@
 "*":
-  editor:
-    showIndentGuide: true
-    invisibles: {}
-    showInvisibles: true
-    fontFamily: "Roboto Mono"
-    fontSize: 15
+  "atom-material-ui":
+    compactTreeView: true
+    useRoboto: true
   core:
+    disabledPackages: [
+      "background-tips"
+      "exception-reporting"
+      "metrics"
+      "language-todo"
+    ]
     excludeVcsIgnoredPaths: true
+    hideGitIgnoredFiles: true
     ignoredNames: [
       ".bundle"
       ".git"
@@ -15,27 +19,26 @@
       "tmp"
       "vendor"
     ]
-    hideGitIgnoredFiles: true
-    disabledPackages: [
-      "background-tips"
-      "exception-reporting"
-      "metrics"
-      "language-todo"
-    ]
     projectHome: "/home/mbaxa/git"
+  editor:
+    fontFamily: "Roboto Mono"
+    fontSize: 15
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "file-icons": {}
+  "flex-tool-bar": {}
+  "imdone-atom": {}
+  "release-notes":
+    viewedVersion: "0.89.0"
   "spell-check":
     grammars: [
       "text.plain"
       "source.gfm"
       "text.git-commit"
     ]
+  "tool-bar":
+    iconSize: "16px"
+  "tree-view": {}
   welcome:
     showOnStartup: false
-  "release-notes":
-    viewedVersion: "0.89.0"
-  "tree-view": {}
-  "atom-material-ui":
-    useRoboto: true
-    compactTreeView: true
-  "imdone-atom": {}
-  "file-icons": {}
