@@ -11,7 +11,7 @@ unbind C-b
 bind C-a send-prefix
 
 # Set mouse mode
-setw -g mode-mouse on
+setw -g mouse on
 
 # shorten command delay
 set -sg escape-time 1
