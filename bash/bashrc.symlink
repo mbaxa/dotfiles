@@ -21,10 +21,22 @@ function aws_region {
 
 function aws_profile {
   export AWS_PROFILE=$1
-  if [ "x$2" != "x" ]
-  then
-    export AWS_REGION=$2
-  fi
+  case $1 in
+    dev)
+      AWS_REGION=us-west-2
+      ;;
+    qa)
+      AWS_REGION=us-west-1
+      ;;
+    live)
+      AWS_REGION=us-east-1
+      ;;
+    *)
+      echo "I don't know what the region should be for $1"
+      ;;
+  esac
+  export AWS_REGION
+
   echo -en "\033]0;AWS:P=${AWS_PROFILE-$AWS_DEFAULT_PROFILE},R=${AWS_REGION-$AWS_DEFAULT_REGION}\a"
 }
 
@@ -51,9 +63,16 @@ PS1='\[\033[01;32m\]\u@\h:\[\033[01;36m\]\w\[\033[00m\]\n$(parse_git_branch)\$ '
 HISTIGNORE='history'
 HISTTIMEFORMAT='[%F %T] '
 
-PERL_MB_OPT="--install_base \"/home/mbaxa/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/mbaxa/perl5"; export PERL_MM_OPT;
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 complete -C '/usr/local/bin/aws_completer' aws
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+PATH="/Users/matt/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/matt/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/matt/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/matt/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/matt/perl5"; export PERL_MM_OPT;
