@@ -59,7 +59,7 @@ alias drmi='docker rmi'
 [[ $- = *i* ]] && source ~/git/liquidprompt/liquidprompt
 
 PS1="[\u@\h \W]\\$ "
-PATH="$PATH:/usr/local/bin:~/bin:/usr/local/Sublime Text 2:/opt/gradle-2.4/bin:/opt/cisco/anyconnect/bin"
+PATH="$PATH:/usr/local/bin:~/bin:/opt/gradle-2.4/bin:/opt/cisco/anyconnect/bin"
 CLICOLOR=1
 PS1='\[\033[01;32m\]\u@\h:\[\033[01;36m\]\w\[\033[00m\]\n$(parse_git_branch)\$ '
 
