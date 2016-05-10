@@ -31,6 +31,9 @@ function aws_profile {
     live)
       AWS_REGION=us-east-1
       ;;
+    dig)
+      AWS_REGION=us-west-2
+      ;;
     *)
       echo "I don't know what the region should be for $1"
       ;;
