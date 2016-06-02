@@ -39,7 +39,8 @@ function aws_profile {
       ;;
   esac
   export AWS_REGION
-
+  iterm2_set_user_var aws_profile $AWS_PROFILE
+  iterm2_set_user_var aws_region $AWS_REGION
   echo -en "\033]0;AWS:P=${AWS_PROFILE-$AWS_DEFAULT_PROFILE},R=${AWS_REGION-$AWS_DEFAULT_REGION}\a"
 }
 
@@ -79,3 +80,4 @@ PERL5LIB="/Users/matt/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB
 PERL_LOCAL_LIB_ROOT="/Users/matt/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/matt/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/matt/perl5"; export PERL_MM_OPT;
+
