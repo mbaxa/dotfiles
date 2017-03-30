@@ -48,19 +48,32 @@ function aws_update_title {
   echo -en "\033]0;AWS:P=${AWS_PROFILE-$AWS_DEFAULT_PROFILE},R=${AWS_REGION-$AWS_DEFAULT_REGION}\a"
 }
 
+alias jssh='jungle ec2 ssh -u ec2-user'
+alias mqs='jungle ec2 ssh -u ec2-user -n live-mortechQuoteService'
+alias qapi='jungle ec2 ssh -u ec2-user -n live-quoteApi'
+
 alias ll='ls -al'
 alias psg='ps -ef | grep'
 alias v='vagrant'
+alias mtools='cd ~/git/mops/tools'
+
+# Docker helpers
 alias drm-all='docker rm -v $(docker ps -aq -f status=exited)'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias drm='docker rm'
 alias drmi='docker rmi'
+alias di='docker images'
+
+# Test Kitchen helpers
+alias k='kitchen'
+alias kc='kitchen converge'
+alias kv='kitchen verify'
 
 [[ $- = *i* ]] && source ~/git/liquidprompt/liquidprompt
 
 PS1="[\u@\h \W]\\$ "
-PATH="$PATH:/usr/local/bin:~/bin:/opt/gradle-2.4/bin:/opt/cisco/anyconnect/bin"
+PATH="$PATH:/usr/local/bin:~/bin:/usr/local/gradle-2.10/bin:/opt/cisco/anyconnect/bin"
 CLICOLOR=1
 PS1='\[\033[01;32m\]\u@\h:\[\033[01;36m\]\w\[\033[00m\]\n$(parse_git_branch)\$ '
 
@@ -73,6 +86,10 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
+fi
+
+if [ -f /usr/local/etc/bash_completion ]; then
+  . /usr/local/etc/bash_completion
 fi
 
 PATH="/Users/matt/perl5/bin${PATH:+:${PATH}}"; export PATH;
