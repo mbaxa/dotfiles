@@ -92,6 +92,10 @@ if [ -f /usr/local/etc/bash_completion ]; then
   . /usr/local/etc/bash_completion
 fi
 
+if [ -f /usr/local/etc/grc.bashrc ]; then
+  . /usr/local/etc/grc.bashrc
+fi
+
 PATH="/Users/matt/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/Users/matt/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/matt/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
